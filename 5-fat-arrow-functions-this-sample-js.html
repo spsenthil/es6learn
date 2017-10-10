@@ -1,0 +1,18 @@
+
+var btn=document.querySelector('button')
+
+//Scope will not change.
+// !!! Keeps the context !!! - is the most important.
+var aArrowFn=()=>console.log(this);////Poins to window
+
+
+//Scope will  changes based on context.
+function aCallBack(){
+  //referes to the button
+  console.log(this)
+}
+
+//btn.addEventListener('click',aCallBack);
+
+
+btn.addEventListener('click',aArrowFn);//Poins to window
